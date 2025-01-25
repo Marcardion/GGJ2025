@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh84uls73ks4b"]
+
+[ext_resource type="Texture2D" uid="uid://cjagj2itmbs3l" path="res://BG/BG_Flat.png" id="1_hxotx"]
+
+[node name="ParallaxTest" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer"]
+modulate = Color(0.129412, 0.635294, 0.843137, 1)
+offset_right = 618.0
+offset_bottom = 400.0
+texture = ExtResource("1_hxotx")
+expand_mode = 4
