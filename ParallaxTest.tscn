@@ -5,10 +5,9 @@
 [node name="ParallaxTest" type="ParallaxBackground"]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1024, 0)
 
-[node name="TextureRect" type="TextureRect" parent="ParallaxLayer"]
+[node name="BG_Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
 modulate = Color(0.129412, 0.635294, 0.843137, 1)
-offset_right = 618.0
-offset_bottom = 400.0
 texture = ExtResource("1_hxotx")
-expand_mode = 4
+centered = false
