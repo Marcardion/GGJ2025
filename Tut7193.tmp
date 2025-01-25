@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=4 uid="uid://bkbmylw0404sr"]
+
+[ext_resource type="Texture2D" uid="uid://d0cvtebq0tbx3" path="res://BG/Assets_base.png" id="1_5bnlf"]
+[ext_resource type="PackedScene" uid="uid://btgp8rja60yt5" path="res://player/player_scene.tscn" id="2_6xfjv"]
+[ext_resource type="PackedScene" uid="uid://bqq8bdpvhl3va" path="res://bubble_area.tscn" id="3_2p4sj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gl03v"]
+texture = ExtResource("1_5bnlf")
+texture_region_size = Vector2i(128, 128)
+0:7/0 = 0
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:7/0 = 0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:7/0 = 0
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+4:7/0 = 0
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+5:7/0 = 0
+5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_5bhf6"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_gl03v")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w4go4"]
+texture = ExtResource("1_5bnlf")
+texture_region_size = Vector2i(128, 128)
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_nncda"]
+tile_size = Vector2i(128, 128)
+sources/1 = SubResource("TileSetAtlasSource_w4go4")
+
+[node name="Tutorial" type="Node2D"]
+
+[node name="tileMap_Ground" type="TileMapLayer" parent="."]
+position = Vector2(0, -1)
+tile_map_data = PackedByteArray("AAAFAAUAAAAAAAcAAAAGAAUAAAABAAcAAAAHAAUAAAACAAcAAAAIAAUAAAADAAcAAAAJAAUAAAAEAAcAAAAKAAUAAAAFAAcAAAA=")
+tile_set = SubResource("TileSet_5bhf6")
+
+[node name="tileMap_BG" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAFAAQAAQAAAAYAAAAGAAQAAQABAAYAAAAHAAQAAQACAAYAAAAIAAQAAQADAAYAAAAJAAQAAQAEAAYAAAAKAAQAAQAFAAYAAAA=")
+tile_set = SubResource("TileSet_nncda")
+
+[node name="main_character" parent="." instance=ExtResource("2_6xfjv")]
+position = Vector2(798, 451)
+
+[node name="bubble_area" parent="." instance=ExtResource("3_2p4sj")]
+position = Vector2(1362, 444)

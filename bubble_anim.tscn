@@ -1,0 +1,91 @@
+[gd_scene load_steps=13 format=3 uid="uid://bbkpgksdcwqrh"]
+
+[ext_resource type="Texture2D" uid="uid://d0cvtebq0tbx3" path="res://BG/Assets_base.png" id="1_mfcnt"]
+[ext_resource type="Script" path="res://bubble_anim.gd" id="2_k114d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0g13"]
+atlas = ExtResource("1_mfcnt")
+region = Rect2(0, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq5jg"]
+atlas = ExtResource("1_mfcnt")
+region = Rect2(0, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5m4oo"]
+atlas = ExtResource("1_mfcnt")
+region = Rect2(128, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8t6jp"]
+atlas = ExtResource("1_mfcnt")
+region = Rect2(256, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6esr"]
+atlas = ExtResource("1_mfcnt")
+region = Rect2(640, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b3g4"]
+atlas = ExtResource("1_mfcnt")
+region = Rect2(384, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g78k4"]
+atlas = ExtResource("1_mfcnt")
+region = Rect2(384, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkkva"]
+atlas = ExtResource("1_mfcnt")
+region = Rect2(512, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_732m7"]
+atlas = ExtResource("1_mfcnt")
+region = Rect2(0, 640, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7cf3a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0g13")
+}],
+"loop": true,
+"name": &"bubble_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq5jg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5m4oo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8t6jp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6esr")
+}],
+"loop": false,
+"name": &"bubble_pop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6b3g4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g78k4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkkva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_732m7")
+}],
+"loop": true,
+"name": &"bubble_restore",
+"speed": 5.0
+}]
+
+[node name="bubble_anim" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_7cf3a")
+animation = &"bubble_pop"
+autoplay = "bubble_idle"
+script = ExtResource("2_k114d")
