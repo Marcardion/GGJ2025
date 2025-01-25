@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://deweuic5pqgdm"]
+
+[ext_resource type="Texture2D" uid="uid://dnwfkbjln7w70" path="res://BG/Assets_base.png" id="1_i8nst"]
+
+[node name="BubbleSprite2d" type="Sprite2D"]
+texture = ExtResource("1_i8nst")
+hframes = 8
+vframes = 8
+frame = 40
+region_rect = Rect2(0.152374, 641.061, 128.756, 128.289)
