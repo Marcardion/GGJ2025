@@ -8,6 +8,5 @@
 motion_mirroring = Vector2(1024, 0)
 
 [node name="BG_Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
-modulate = Color(0.129412, 0.635294, 0.843137, 1)
 texture = ExtResource("1_hxotx")
 centered = false
