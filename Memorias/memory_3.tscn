@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddn4pgdlfwm5o"]
+
+[ext_resource type="Script" path="res://Memorias/memory.gd" id="1_q82eq"]
+
+[node name="Memory3" type="Node2D"]
+script = ExtResource("1_q82eq")
+memoryname = "memory3_timeline"
