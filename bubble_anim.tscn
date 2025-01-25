@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bbkpgksdcwqrh"]
 
-[ext_resource type="Texture2D" uid="uid://d0cvtebq0tbx3" path="res://BG/Assets_base.png" id="1_mfcnt"]
+[ext_resource type="Texture2D" uid="uid://dnwfkbjln7w70" path="res://BG/Assets_base.png" id="1_mfcnt"]
 [ext_resource type="Script" path="res://bubble_anim.gd" id="2_k114d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c0g13"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bla2fqxhswcpf"]
 
-[ext_resource type="PackedScene" uid="uid://dh84uls73ks4b" path="res://ParallaxTest.tscn" id="1_v1p26"]
+[ext_resource type="PackedScene" uid="uid://dh84uls73ks4b" path="res://ParallaxBG.tscn" id="1_v1p26"]
 
 [node name="CanvasBgTest" type="Node2D"]
 
