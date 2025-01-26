@@ -1,2 +1,12 @@
 [background arg="res://Memorias/CG/memoria-3.png" fade="0.0"]
-Memoria 3
+Junho 201X
+friend1_character: Juro que não tem nada mais vendido do que ir pra fora pra trabalhar no que a gente quer.
+main_character: Amiga, concordo, mas nem pelo emprego dos sonhos?
+friend1_character: E deixar todo mundo que você conhece pra trás, tá doide é?
+friend2_character: Acho tão difícil de imaginar ter que ir pra algum lugar longe de vocês...\
+Eu não estaria fazendo essa graduação se não tivesse apoio.
+main_character: (rindo) Apoio só de vocês mesmo na minha vida, é uma dificuldade de encontrar qualquer coisa nessa área!\
+Meus pais não me deixam em paz, querem que eu faça concurso.
+friend1_character: SE TEM UMA COISA PIOR DO QUE IR PRA FORA É COMPARAR COM OS PRIMOS QUE FIZERAM CONCURSO!
+(todo riem, a música de forró continua ao fundo)
+do Globals.change_scene("res://Memorias/memory_4.tscn")
