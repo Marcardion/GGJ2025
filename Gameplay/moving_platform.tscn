@@ -12,6 +12,7 @@ script = ExtResource("1_rf06h")
 [node name="plataformBody" type="AnimatableBody2D" parent="."]
 
 [node name="platformSprite" type="Sprite2D" parent="plataformBody"]
+self_modulate = Color(1, 1, 0, 1)
 texture = ExtResource("1_jkhjr")
 region_enabled = true
 region_rect = Rect2(-2, 511, 387, 88)

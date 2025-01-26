@@ -1,2 +1,9 @@
 [background arg="res://Memorias/CG/memoria-2.png" fade="0.0"]
-Memoria 2
+Junho, 200X
+main_character: Então eu pensei no nome Ariel, que acham?
+friend1_character: Que nem a sereia? Amo!\
+Você trouxe seu gameboy, Pedro?
+friend2_character: Tá aqui, a gente já faz um save com o nome novo...
+main_character: Não tem melhores amigos, hein? Eu posso contar com vocês pra tudo!
+(Eles riem enquanto a quadrilha continua)
+do Globals.change_scene("res://Memorias/memory_3.tscn")

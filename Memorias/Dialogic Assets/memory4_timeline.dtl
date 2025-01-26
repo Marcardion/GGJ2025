@@ -1,2 +1,15 @@
 [background arg="res://Memorias/CG/memoria-4.png" fade="0.0"]
-Memoria 4
+Dezembro 202X
+main_character: Me perdoem, viu? A gente já passou cada sufoco juntos, pra brigar por besteira.
+friend1_character: Quem tem que pedir desculpa sou eu, você tá indo pra outro estado, não se divorciando da gente!
+friend2_character: Vocês não sabem do alívio que eu tô, amo vocês demais pra ficar brigado pra sempre.
+main_character: Eu vou passar o dia no Discord pra falar com vocês!
+friend1_character: Tem vida não, ô criatura? Tem que viver lá também, fazer amizade no trabalho!
+friend1_character: Encontrar paquera...
+main_character: Susana... Amiga...
+friend2_character: Sem briga gente, pelo amor de Deus!
+main_character: Eu vou sentir tanta falta de vocês...
+(O abraço termina, Pedro com olhos lacrimejando, até Susana parecendo querer chorar, ajudando Ariel com sua mala.)
+ (Um outro abraço. Ariel entra e senta no seu lugar do ônibus.)
+(Enquanto o ônibus começa a sair elu fecha os olhos, deixando a lembrança de seus amigos, sua verdadeira família, inundar seus pensamentos)
+do Globals.change_scene("res://Levels/Credits.tscn")
