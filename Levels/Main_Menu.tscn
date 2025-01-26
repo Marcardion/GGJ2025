@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://6n3yg2cyqadw"]
 
 [ext_resource type="Script" path="res://Levels/main_menu.gd" id="1_7scxi"]
-[ext_resource type="Texture2D" uid="uid://bhecttelxssbf" path="res://Assets/bubble_memory.png" id="2_rmj5x"]
-[ext_resource type="Texture2D" uid="uid://dwkti1g21vvha" path="res://BG/Pranchet.png" id="2_rxwmk"]
+[ext_resource type="Texture2D" uid="uid://mbi3xanr1xed" path="res://BG/vuvvle.png" id="2_a1jyo"]
 [ext_resource type="FontVariation" uid="uid://3bushjw0fiti" path="res://Assets/UI_Art/ui_font.tres" id="3_rqqcn"]
 [ext_resource type="PackedScene" uid="uid://6g6polhe7nhu" path="res://Assets/UI_Art/CustomButton.tscn" id="4_2ruch"]
-[ext_resource type="Texture2D" uid="uid://dtm01k2ahmfp5" path="res://BG/game logo 2.png" id="6_aj6wr"]
+[ext_resource type="Texture2D" uid="uid://bd2k1nyivkw06" path="res://Assets/bubble logo.png" id="5_4a8fo"]
+[ext_resource type="Texture2D" uid="uid://cuaa3cbaod2ws" path="res://BG/game logo 2.png" id="6_aj6wr"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -23,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_rxwmk")
+texture = ExtResource("2_a1jyo")
 expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -86,7 +86,7 @@ offset_right = 508.0
 offset_bottom = 190.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_rmj5x")
+texture = ExtResource("5_4a8fo")
 stretch_mode = 4
 
 [node name="Logo" type="TextureRect" parent="MarginContainer/HBoxContainer/Separator?"]
