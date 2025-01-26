@@ -46,7 +46,7 @@ theme_override_constants/separation = 64
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-theme_override_constants/separation = 64
+theme_override_constants/separation = 32
 
 [node name="Menu" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -55,49 +55,19 @@ theme_override_font_sizes/font_size = 40
 text = "Menu"
 horizontal_alignment = 1
 
-[node name="CustomButton" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("4_2ruch")]
+[node name="ButtonStart" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("4_2ruch")]
+unique_name_in_owner = true
 layout_mode = 2
+text = "Start Game"
 
-[node name="PositionButton" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer/CustomButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ButtonStart" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/CustomButton/PositionButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Game Start"
-
-[node name="CustomButton2" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("4_2ruch")]
+[node name="ButtonCredits" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("4_2ruch")]
 layout_mode = 2
-
-[node name="ButtonCredits" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/CustomButton2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 text = "Credits"
 
-[node name="CustomButton3" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("4_2ruch")]
+[node name="ButtonExit" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("4_2ruch")]
 layout_mode = 2
-
-[node name="ButtonExit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/CustomButton3"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Exit"
+text = "Exit
+"
 
 [node name="Separator?" type="Control" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -132,6 +102,6 @@ grow_vertical = 2
 texture = ExtResource("3_brbqd")
 stretch_mode = 4
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/CustomButton/PositionButton/ButtonStart" to="." method="_on_button_start_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/CustomButton2/ButtonCredits" to="." method="_on_button_credits_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/CustomButton3/ButtonExit" to="." method="_on_button_exit_pressed"]
+[connection signal="custom_pressed" from="MarginContainer/HBoxContainer/VBoxContainer/ButtonStart" to="." method="_on_button_start_pressed"]
+[connection signal="custom_pressed" from="MarginContainer/HBoxContainer/VBoxContainer/ButtonCredits" to="." method=" _on_button_credits_pressed"]
+[connection signal="custom_pressed" from="MarginContainer/HBoxContainer/VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]

@@ -1,14 +1,15 @@
-[gd_scene load_steps=24 format=3 uid="uid://6g6polhe7nhu"]
+[gd_scene load_steps=25 format=3 uid="uid://6g6polhe7nhu"]
 
 [ext_resource type="Texture2D" uid="uid://mwxtqi6bxcsm" path="res://Assets/UI_Art/button_normal.png" id="1_4b5ro"]
+[ext_resource type="Script" path="res://Assets/UI_Art/custom_button.gd" id="1_5bs71"]
 [ext_resource type="Texture2D" uid="uid://caqpl8e4on2n2" path="res://Assets/UI_Art/button_pressed2.png" id="2_3octl"]
 [ext_resource type="Texture2D" uid="uid://bm1og5mulpoe5" path="res://Assets/UI_Art/button_pressed3.png" id="3_8rmhf"]
 [ext_resource type="Texture2D" uid="uid://b02e2i7evcama" path="res://Assets/UI_Art/button_pressed5.png" id="4_mjo7a"]
-[ext_resource type="Texture2D" uid="uid://d0qcimojb8ymi" path="res://Assets/UI_Art/button_pressed1.png" id="5_ph4kd"]
 [ext_resource type="Texture2D" uid="uid://dyyng7ph6qn6j" path="res://Assets/UI_Art/button_hover1.png" id="6_x54jx"]
 [ext_resource type="Texture2D" uid="uid://01fu8t3ivjlg" path="res://Assets/UI_Art/button_hover2.png" id="7_lwbx3"]
 [ext_resource type="Texture2D" uid="uid://b6oyuif1f7suu" path="res://Assets/UI_Art/button_hover3.png" id="8_vwrup"]
 [ext_resource type="Texture2D" uid="uid://m3m022b5r04i" path="res://Assets/UI_Art/button_hover4.png" id="9_yaxrk"]
+[ext_resource type="Texture2D" uid="uid://cohniwiudxjnj" path="res://Assets/UI_Art/button_pressed4.png" id="10_cacu1"]
 [ext_resource type="Texture2D" uid="uid://drw78c2uuwyaf" path="res://Assets/UI_Art/button_disabled.png" id="10_q8aw3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o45pa"]
@@ -56,38 +57,6 @@ tracks/0/keys = {
 "values": [ExtResource("1_4b5ro")]
 }
 
-[sub_resource type="Animation" id="Animation_0jdat"]
-resource_name = "pressed"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.266667, 0.366667, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("1_4b5ro"), ExtResource("2_3octl"), ExtResource("3_8rmhf"), ExtResource("4_mjo7a"), ExtResource("5_ph4kd")]
-}
-
-[sub_resource type="Animation" id="Animation_ka2l5"]
-resource_name = "hover"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.366667, 0.666667, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [ExtResource("6_x54jx"), ExtResource("7_lwbx3"), ExtResource("8_vwrup"), ExtResource("9_yaxrk")]
-}
-
 [sub_resource type="Animation" id="Animation_y2rck"]
 resource_name = "disabled"
 length = 0.1
@@ -104,6 +73,38 @@ tracks/0/keys = {
 "values": [ExtResource("10_q8aw3")]
 }
 
+[sub_resource type="Animation" id="Animation_ka2l5"]
+resource_name = "hover"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.366667, 0.666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [ExtResource("6_x54jx"), ExtResource("7_lwbx3"), ExtResource("8_vwrup"), ExtResource("9_yaxrk")]
+}
+
+[sub_resource type="Animation" id="Animation_0jdat"]
+resource_name = "pressed"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.233334, 0.333334, 0.433333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_4b5ro"), ExtResource("2_3octl"), ExtResource("3_8rmhf"), ExtResource("10_cacu1"), ExtResource("4_mjo7a"), null]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t1nju"]
 _data = {
 "RESET": SubResource("Animation_rjk2w"),
@@ -115,8 +116,10 @@ _data = {
 
 [node name="CustomButton" type="Button"]
 custom_minimum_size = Vector2(0, 64)
-offset_right = 128.0
-offset_bottom = 64.0
+offset_left = 512.0
+offset_top = 252.0
+offset_right = 640.0
+offset_bottom = 316.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_o45pa")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_8o2ly")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_oq5ns")
@@ -128,8 +131,10 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_u82hh")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_u82hh")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_u82hh")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_u82hh")
+script = ExtResource("1_5bs71")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -140,6 +145,7 @@ texture = ExtResource("1_4b5ro")
 expand_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_t1nju")
 }
