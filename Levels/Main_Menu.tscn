@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Levels/main_menu.gd" id="1_7scxi"]
 [ext_resource type="Texture2D" uid="uid://mbi3xanr1xed" path="res://BG/vuvvle.png" id="2_a1jyo"]
-[ext_resource type="FontVariation" uid="uid://3bushjw0fiti" path="res://Assets/UI_Art/ui_font.tres" id="3_rqqcn"]
+[ext_resource type="FontFile" uid="uid://cde868pqb2fg3" path="res://Assets/UI_Art/SourGummy-Medium.ttf" id="3_mmqp1"]
 [ext_resource type="PackedScene" uid="uid://6g6polhe7nhu" path="res://Assets/UI_Art/CustomButton.tscn" id="4_2ruch"]
 [ext_resource type="Texture2D" uid="uid://bd2k1nyivkw06" path="res://Assets/bubble logo.png" id="5_4a8fo"]
 [ext_resource type="Texture2D" uid="uid://cuaa3cbaod2ws" path="res://BG/game logo 2.png" id="6_aj6wr"]
@@ -51,7 +51,7 @@ theme_override_constants/separation = 32
 [node name="Menu" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.513726, 0.180392, 0.388235, 1)
-theme_override_fonts/font = ExtResource("3_rqqcn")
+theme_override_fonts/font = ExtResource("3_mmqp1")
 theme_override_font_sizes/font_size = 60
 text = "Menu"
 horizontal_alignment = 1

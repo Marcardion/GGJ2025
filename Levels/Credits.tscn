@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbxdlpqiw73in"]
+[gd_scene load_steps=8 format=3 uid="uid://bbxdlpqiw73in"]
 
 [ext_resource type="Script" path="res://Levels/credits.gd" id="1_x174k"]
 [ext_resource type="Texture2D" uid="uid://kyqpn72hjqx0" path="res://BG/Pranchet.png" id="2_ebuxg"]
 [ext_resource type="Texture2D" uid="uid://d34tljprlqunk" path="res://Assets/Rectangle 13.png" id="3_hhfva"]
+[ext_resource type="FontFile" uid="uid://cde868pqb2fg3" path="res://Assets/UI_Art/SourGummy-Medium.ttf" id="4_8ddqs"]
 [ext_resource type="Texture2D" uid="uid://bd2k1nyivkw06" path="res://Assets/bubble logo.png" id="4_jdewx"]
 [ext_resource type="Texture2D" uid="uid://cuaa3cbaod2ws" path="res://BG/game logo 2.png" id="5_438pk"]
 [ext_resource type="PackedScene" uid="uid://6g6polhe7nhu" path="res://Assets/UI_Art/CustomButton.tscn" id="6_dedpg"]
@@ -33,7 +34,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 40
+theme_override_constants/margin_left = 128
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 20
@@ -55,6 +56,7 @@ texture = ExtResource("3_hhfva")
 [node name="Credits" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.517647, 0.180392, 0.380392, 1)
+theme_override_fonts/font = ExtResource("4_8ddqs")
 theme_override_font_sizes/font_size = 60
 text = "Credits"
 horizontal_alignment = 1
@@ -101,6 +103,22 @@ theme_override_font_sizes/font_size = 24
 text = "Special Thanks & Music
 Henrique \"Perons\" Alves"
 
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 40
+
+[node name="Control2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CustomButton" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("6_dedpg")]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Back"
+
 [node name="Separator?" type="Control" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
@@ -134,11 +152,4 @@ grow_vertical = 2
 texture = ExtResource("5_438pk")
 stretch_mode = 4
 
-[node name="CustomButton" parent="." instance=ExtResource("6_dedpg")]
-offset_left = 122.0
-offset_top = 720.0
-offset_right = 250.0
-offset_bottom = 784.0
-text = "BACK"
-
-[connection signal="custom_pressed" from="CustomButton" to="." method="_on_custom_button_custom_pressed"]
+[connection signal="custom_pressed" from="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/CustomButton" to="." method="_on_custom_button_custom_pressed"]
