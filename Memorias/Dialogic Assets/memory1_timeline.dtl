@@ -1,4 +1,4 @@
-[background arg="BG_Flat.png" fade="0.0" transition="Simple Fade"]
+[background arg="res://Memorias/CG/memoria-1.png" fade="0.0" transition="Simple Fade"]
 Memoria 1
 main_character: Teste de texto
 main_character: Segundo teste de texto
