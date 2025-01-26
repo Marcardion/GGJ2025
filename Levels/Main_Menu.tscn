@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bq14xc1phgvx2"]
+[gd_scene load_steps=6 format=3 uid="uid://6n3yg2cyqadw"]
 
+[ext_resource type="Script" path="res://Levels/main_menu.gd" id="1_7scxi"]
 [ext_resource type="Texture2D" uid="uid://cjagj2itmbs3l" path="res://BG/BG_Flat.png" id="1_ec8ra"]
 [ext_resource type="Texture2D" uid="uid://bhecttelxssbf" path="res://Assets/bubble_memory.png" id="2_rmj5x"]
 [ext_resource type="Texture2D" uid="uid://beop2581tntlh" path="res://Assets/game_logo.png" id="3_brbqd"]
@@ -21,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7scxi")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -113,3 +115,7 @@ offset_bottom = 249.0
 grow_vertical = 2
 texture = ExtResource("3_brbqd")
 stretch_mode = 4
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/ButtonStart" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/ButtonCredits" to="." method="_on_button_credits_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]
