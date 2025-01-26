@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 450.0
-const JUMP_VELOCITY = -800.0
+const JUMP_VELOCITY = -1000.0
 
 
 func _physics_process(delta: float) -> void:
@@ -24,18 +24,21 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-# Movimento setinhas personagem
-	if Input.is_key_pressed(KEY_LEFT):
-		get_node("character_anim").animation="walk"
+# Girando o personagem de acordo com a direção
+	if velocity.x < 0:
 		get_node("character_anim").scale=Vector2(1,1)
-	elif Input.is_key_pressed(KEY_RIGHT):
-		get_node("character_anim").animation="walk"
+	elif velocity.x > 0:
 		get_node("character_anim").scale=Vector2(-1,1)
-	else:
-		get_node("character_anim").animation="idle"
-
-# Movimento pulo e queda do personagem
-	if not is_on_floor():
+		
+# Movimento setinhas personagem
+	if is_on_floor():
+		if Input.is_key_pressed(KEY_LEFT):
+			get_node("character_anim").animation="walk"
+		elif Input.is_key_pressed(KEY_RIGHT):
+			get_node("character_anim").animation="walk"
+		else:
+			get_node("character_anim").animation="idle"
+	else: # Movimento pulo e queda do personagem
 		if velocity.y < 0:
 			get_node("character_anim").animation="jump"
 		else:

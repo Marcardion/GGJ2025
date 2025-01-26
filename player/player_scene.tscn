@@ -201,6 +201,8 @@ script = ExtResource("1_w0rsf")
 sprite_frames = SubResource("SpriteFrames_4ulq7")
 animation = &"jump"
 autoplay = "idle"
+frame = 4
+frame_progress = 1.0
 
 [node name="camera" type="Camera2D" parent="."]
 offset = Vector2(0, -300)
