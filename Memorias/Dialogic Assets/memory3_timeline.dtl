@@ -8,5 +8,5 @@ Eu não estaria fazendo essa graduação se não tivesse apoio.
 main_character: (rindo) Apoio só de vocês mesmo na minha vida, é uma dificuldade de encontrar qualquer coisa nessa área!\
 Meus pais não me deixam em paz, querem que eu faça concurso.
 friend1_character: SE TEM UMA COISA PIOR DO QUE IR PRA FORA É COMPARAR COM OS PRIMOS QUE FIZERAM CONCURSO!
-(todo riem, a música de forró continua ao fundo)
-do Globals.change_scene("res://Memorias/memory_4.tscn")
+(Todos riem, a música de forró continua ao fundo)
+jump memory4_timeline/
