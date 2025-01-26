@@ -1,7 +1,6 @@
 extends Node
 
-const CONSTS = preload("sound_manager_consts.gd")
-enum NOTES {A, AS, B, C, CS, D, DS, E, F, FS, G, GS}
+const CONSTS = preload("simulation_consts.gd")
 
 signal played_note
 
@@ -9,11 +8,17 @@ signal played_note
 
 var _notes_origin : Vector2
 var _notes_width : float
+var _scale_freq : Array[float] = []
+var _note_to_scale : Dictionary = {}
 
 
 func setup(origin: Vector2, notes_width: float) -> void:
 	_notes_origin = origin
 	_notes_width = notes_width
+	
+	for i in range(CONSTS.NOTE_FREQS.size()):
+		if CONSTS.SCALE.has(i % 12):
+			_scale_freq.push_back(CONSTS.NOTE_FREQS[i])
 
 
 func queue_sound(params) -> void:
@@ -25,14 +30,15 @@ func queue_sound(params) -> void:
 	var player = AudioStreamPlayer.new()
 	add_child(player)
 	play_sound(player, params)
+	_players.push_back(player)
 
 
 func play_sound(player : AudioStreamPlayer, params) -> void:
 	player.stream = CONSTS.C_PIANO_SOUND
 	var note_x = params["position"].x - _notes_origin.x
-	var note = floori(note_x / _notes_width) + CONSTS.MIDDLE_C_FREQ_IDX
-	note = clamp(note, 0, CONSTS.NOTE_FREQS.size()-1)
-	player.pitch_scale = CONSTS.NOTE_FREQS[note]
+	var note = floori(note_x / _notes_width) + CONSTS.SCALE.size()
+	note = clamp(note, 0, _scale_freq.size()-1)
+	player.pitch_scale = _scale_freq[note]
 	player.play()
 	
 	played_note.emit()

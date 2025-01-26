@@ -1,0 +1,11 @@
+enum NOTES {A, AS, B, C, CS, D, DS, E, F, FS, G, GS}
+
+const C_PIANO_SOUND = preload("../assets/middle_c_piano.wav")
+const C3_TOY_BELL_SOUND = preload("../assets/c3_toy_bell.wav")
+const NOTE_FREQS = [0.5, 0.529, 0.561, 0.594, 0.629, 0.667, 0.707, 0.749, 0.793, 0.840, 0.890, 0.943, 1.0, 1.059, 1.122, 1.189, 1.259, 1.334, 1.414, 1.498, 1.587, 1.681, 1.781, 1.887, 2.0, 2.118, 2.244, 2.378, 2.519, 2.669, 2.828, 2.996, 3.174, 3.363, 3.563, 3.775, 4.0]
+const SCALE = [NOTES.AS, NOTES.C, NOTES.D, NOTES.DS, NOTES.F, NOTES.G, NOTES.GS]
+
+const PACHINKO_REFRESH_TIMER = 6.0
+const PACHINKO_HEAT_PERIOD = 30.0
+const PACHINKO_MAX_HEAT_SOUNDS_TARGET = 14
+const PACHINKO_MAX_HEAT_SPAWNERS_TARGET = 4

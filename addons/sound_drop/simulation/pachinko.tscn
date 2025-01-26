@@ -5,6 +5,7 @@
 
 [node name="Pachinko" type="Node2D"]
 script = ExtResource("1_43ty2")
+notes_target = 10
 
 [node name="SoundManager" type="Node" parent="."]
 unique_name_in_owner = true
