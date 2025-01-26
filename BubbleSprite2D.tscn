@@ -51,3 +51,4 @@ texture = ExtResource("1_60gv5")
 libraries = {
 "": SubResource("AnimationLibrary_yumpl")
 }
+autoplay = "floating"
