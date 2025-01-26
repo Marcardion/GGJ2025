@@ -33,7 +33,6 @@ shape = SubResource("RectangleShape2D_al7bd")
 
 [node name="bubble_anim" parent="StaticBody2D/CollisionShape2D" instance=ExtResource("1_p243n")]
 unique_name_in_owner = true
-animation = &"bubble_restore"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="PopTimer" to="." method="_on_pop_timer_timeout"]

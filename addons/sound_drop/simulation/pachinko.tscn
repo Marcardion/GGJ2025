@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgg3mv7k7h8ga"]
+
+[ext_resource type="Script" path="res://addons/sound_drop/simulation/pachinko.gd" id="1_43ty2"]
+[ext_resource type="Script" path="res://addons/sound_drop/simulation/sound_manager.gd" id="3_pmlsp"]
+
+[node name="Pachinko" type="Node2D"]
+script = ExtResource("1_43ty2")
+
+[node name="SoundManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_pmlsp")
