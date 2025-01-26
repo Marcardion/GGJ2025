@@ -163,6 +163,6 @@ position = Vector2(-110, -1558.75)
 shape = SubResource("RectangleShape2D_sfigx")
 
 [node name="MovingPlatform" parent="." instance=ExtResource("6_01d3k")]
-position = Vector2(188, 85)
+position = Vector2(188, 142)
 move_speed = 2.0
 move_horizontal = false
