@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bbkpgksdcwqrh" path="res://bubble_anim.tscn" id="1_p243n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2behv"]
-radius = 61.5411
+radius = 72.5349
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_al7bd"]
 size = Vector2(100, 99.5)
@@ -34,6 +34,7 @@ shape = SubResource("RectangleShape2D_al7bd")
 
 [node name="bubble_anim" parent="StaticBody2D/CollisionShape2D" instance=ExtResource("1_p243n")]
 unique_name_in_owner = true
+animation = &"bubble_idle"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="PopTimer" to="." method="_on_pop_timer_timeout"]

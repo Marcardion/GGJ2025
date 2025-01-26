@@ -9,7 +9,6 @@ func _on_body_entered(_body: Node2D) -> void:
 	
 
 func _on_pop_timer_timeout():
-	print_debug("POP")
 	%bubble_anim.play("bubble_pop")
 	$StaticBody2D/CollisionShape2D.disabled = true
 	active = false
