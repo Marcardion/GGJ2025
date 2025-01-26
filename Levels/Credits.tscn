@@ -1,19 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbxdlpqiw73in"]
+[gd_scene load_steps=7 format=3 uid="uid://bbxdlpqiw73in"]
 
-[ext_resource type="Texture2D" uid="uid://cjagj2itmbs3l" path="res://BG/BG_Flat.png" id="1_ej2h2"]
 [ext_resource type="Script" path="res://Levels/credits.gd" id="1_x174k"]
-[ext_resource type="Texture2D" uid="uid://bhecttelxssbf" path="res://Assets/bubble_memory.png" id="2_qorxv"]
-[ext_resource type="Texture2D" uid="uid://beop2581tntlh" path="res://Assets/game_logo.png" id="3_d7gtr"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uyspe"]
-content_margin_left = 12.0
-content_margin_top = 12.0
-content_margin_right = 12.0
-content_margin_bottom = 12.0
-bg_color = Color(0.545098, 0.796078, 0.992157, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
+[ext_resource type="Texture2D" uid="uid://kyqpn72hjqx0" path="res://BG/Pranchet.png" id="2_ebuxg"]
+[ext_resource type="Texture2D" uid="uid://d34tljprlqunk" path="res://Assets/Rectangle 13.png" id="3_hhfva"]
+[ext_resource type="Texture2D" uid="uid://bd2k1nyivkw06" path="res://Assets/bubble logo.png" id="4_jdewx"]
+[ext_resource type="Texture2D" uid="uid://cuaa3cbaod2ws" path="res://BG/game logo 2.png" id="5_438pk"]
+[ext_resource type="PackedScene" uid="uid://6g6polhe7nhu" path="res://Assets/UI_Art/CustomButton.tscn" id="6_dedpg"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -31,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ej2h2")
+texture = ExtResource("2_ebuxg")
 expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -56,54 +48,58 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_constants/separation = 10
 
+[node name="Rectangle13" type="Sprite2D" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+position = Vector2(147, 309)
+texture = ExtResource("3_hhfva")
+
 [node name="Credits" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(0.517647, 0.180392, 0.380392, 1)
+theme_override_font_sizes/font_size = 60
 text = "Credits"
 horizontal_alignment = 1
 
 [node name="Marcelo Costa" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.14902, 0.215686, 0.466667, 1)
 theme_override_font_sizes/font_size = 24
 text = "Marcelo Costa
 Game Design, Narrative, Dev"
 
-[node name="Matheus Dias" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Matheus Jardim" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.152941, 0.207843, 0.470588, 1)
 theme_override_font_sizes/font_size = 24
-text = "Matheus Dias 
+text = "Matheus Jardim
 Dev, Level Design"
 
 [node name="Laila Alves" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.14902, 0.207843, 0.470588, 1)
 theme_override_font_sizes/font_size = 24
 text = "Laila Alves 
 2D art & BG"
 
 [node name="Brena Cardoso" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.14902, 0.211765, 0.470588, 1)
 theme_override_font_sizes/font_size = 24
 text = "Brena Cardoso 
 2D art & characters"
 
 [node name="Hannah Costa" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.14902, 0.211765, 0.470588, 1)
 theme_override_font_sizes/font_size = 24
 text = "Hannah Costa 
 UI/UX"
 
 [node name="Henrique Alves" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.14902, 0.211765, 0.470588, 1)
 theme_override_font_sizes/font_size = 24
 text = "Special Thanks & Music
 Henrique \"Perons\" Alves"
-
-[node name="ButtonBack" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_uyspe")
-text = "Back"
 
 [node name="Separator?" type="Control" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -122,7 +118,7 @@ offset_right = 404.0
 offset_bottom = 190.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_qorxv")
+texture = ExtResource("4_jdewx")
 stretch_mode = 4
 
 [node name="Logo" type="TextureRect" parent="MarginContainer/HBoxContainer/Separator?"]
@@ -135,7 +131,14 @@ offset_top = -26.0
 offset_right = 470.0
 offset_bottom = 249.0
 grow_vertical = 2
-texture = ExtResource("3_d7gtr")
+texture = ExtResource("5_438pk")
 stretch_mode = 4
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]
+[node name="CustomButton" parent="." instance=ExtResource("6_dedpg")]
+offset_left = 122.0
+offset_top = 720.0
+offset_right = 250.0
+offset_bottom = 784.0
+text = "BACK"
+
+[connection signal="custom_pressed" from="CustomButton" to="." method="_on_custom_button_custom_pressed"]
