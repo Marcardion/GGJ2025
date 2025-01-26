@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://bqte37qagc5h5"]
+
+[ext_resource type="Script" path="res://Scripts/bubble_jump.gd" id="1_o3l48"]
+[ext_resource type="Texture2D" uid="uid://dnwfkbjln7w70" path="res://BG/Assets_base.png" id="2_3llfe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x18eh"]
+radius = 60.1332
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vkdto"]
+radius = 59.6825
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l06a0"]
+atlas = ExtResource("2_3llfe")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m41mk"]
+atlas = ExtResource("2_3llfe")
+region = Rect2(512, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrp2w"]
+atlas = ExtResource("2_3llfe")
+region = Rect2(640, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bhue0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l06a0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m41mk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrp2w")
+}],
+"loop": true,
+"name": &"popJump",
+"speed": 5.0
+}]
+
+[node name="bubble_jump" type="Node2D"]
+script = ExtResource("1_o3l48")
+
+[node name="bubbleJump_area" type="Area2D" parent="."]
+
+[node name="bubbleJump_Collision" type="CollisionShape2D" parent="bubbleJump_area"]
+shape = SubResource("CircleShape2D_x18eh")
+
+[node name="bubbleJump_Body" type="StaticBody2D" parent="bubbleJump_area"]
+
+[node name="bubbleJump_bodyCollision" type="CollisionShape2D" parent="bubbleJump_area/bubbleJump_Body"]
+shape = SubResource("CircleShape2D_vkdto")
+
+[node name="bubbleJump_anim" type="AnimatedSprite2D" parent="bubbleJump_area/bubbleJump_Body/bubbleJump_bodyCollision"]
+sprite_frames = SubResource("SpriteFrames_bhue0")
+animation = &"popJump"
+frame = 2
+frame_progress = 0.0036173

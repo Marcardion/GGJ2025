@@ -10,6 +10,6 @@ main_character: Susana... Amiga...
 friend2_character: Sem briga gente, pelo amor de Deus!
 main_character: Eu vou sentir tanta falta de vocês...
 (O abraço termina, Pedro com olhos lacrimejando, até Susana parecendo querer chorar, ajudando Ariel com sua mala.)
- (Um outro abraço. Ariel entra e senta no seu lugar do ônibus.)
+(Um outro abraço. Ariel entra e senta no seu lugar do ônibus.)
 (Enquanto o ônibus começa a sair elu fecha os olhos, deixando a lembrança de seus amigos, sua verdadeira família, inundar seus pensamentos)
 do Globals.change_scene("res://Levels/Credits.tscn")

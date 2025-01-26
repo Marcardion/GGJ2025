@@ -104,5 +104,5 @@ texture = ExtResource("6_aj6wr")
 stretch_mode = 4
 
 [connection signal="custom_pressed" from="MarginContainer/HBoxContainer/VBoxContainer/ButtonStart" to="." method="_on_button_start_pressed"]
-[connection signal="custom_pressed" from="MarginContainer/HBoxContainer/VBoxContainer/ButtonCredits" to="." method=" _on_button_credits_pressed"]
+[connection signal="custom_pressed" from="MarginContainer/HBoxContainer/VBoxContainer/ButtonCredits" to="." method="_on_button_credits_custom_pressed"]
 [connection signal="custom_pressed" from="MarginContainer/HBoxContainer/VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]

@@ -6,4 +6,4 @@ Você trouxe seu gameboy, Pedro?
 friend2_character: Tá aqui, a gente já faz um save com o nome novo...
 main_character: Não tem melhores amigos, hein? Eu posso contar com vocês pra tudo!
 (Eles riem enquanto a quadrilha continua)
-do Globals.change_scene("res://Memorias/memory_3.tscn")
+jump memory3_timeline/
