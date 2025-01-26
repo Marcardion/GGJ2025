@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bkbmylw0404sr"]
+[gd_scene load_steps=12 format=4 uid="uid://bkbmylw0404sr"]
 
 [ext_resource type="Texture2D" uid="uid://dnwfkbjln7w70" path="res://BG/Assets_base.png" id="1_5bnlf"]
 [ext_resource type="Texture2D" uid="uid://pri5m6xuqlvn" path="res://BG/clouds_bg.png" id="2_4ah51"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bqq8bdpvhl3va" path="res://bubble_area.tscn" id="3_2p4sj"]
 [ext_resource type="Texture2D" uid="uid://dorx4b2hyqeb" path="res://BG/clouds_moving.png" id="3_olg7b"]
 [ext_resource type="Texture2D" uid="uid://cjagj2itmbs3l" path="res://BG/BG_Flat.png" id="4_4pijj"]
+[ext_resource type="PackedScene" uid="uid://bjwejdca7113v" path="res://Gameplay/memory_bubble.tscn" id="7_vjomy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gl03v"]
 texture = ExtResource("1_5bnlf")
@@ -86,3 +87,8 @@ position = Vector2(798, 451)
 
 [node name="bubble_area" parent="." instance=ExtResource("3_2p4sj")]
 position = Vector2(1362, 444)
+respawn = true
+
+[node name="MemoryBubble" parent="." instance=ExtResource("7_vjomy")]
+position = Vector2(1803, 363)
+memoryscene = "res://Memorias/memory_1.tscn"

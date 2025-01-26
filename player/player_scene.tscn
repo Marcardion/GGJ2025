@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://btgp8rja60yt5"]
+[gd_scene load_steps=30 format=3 uid="uid://btgp8rja60yt5"]
 
 [ext_resource type="Script" path="res://Scripts/character_move_test.gd" id="1_w0rsf"]
 [ext_resource type="Texture2D" uid="uid://dflvt0enkt3cr" path="res://Assets/jump.png" id="2_p3cck"]
@@ -21,14 +21,6 @@ region = Rect2(588, 0, 196, 384)
 atlas = ExtResource("3_6ssjf")
 region = Rect2(784, 0, 196, 384)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_aveid"]
-atlas = ExtResource("2_p3cck")
-region = Rect2(0, 0, 196, 379)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ld666"]
-atlas = ExtResource("2_p3cck")
-region = Rect2(196, 0, 196, 379)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_wxa5x"]
 atlas = ExtResource("2_p3cck")
 region = Rect2(392, 0, 196, 379)
@@ -48,10 +40,6 @@ region = Rect2(980, 0, 196, 379)
 [sub_resource type="AtlasTexture" id="AtlasTexture_b4k7g"]
 atlas = ExtResource("2_p3cck")
 region = Rect2(1176, 0, 196, 379)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s5qqi"]
-atlas = ExtResource("2_p3cck")
-region = Rect2(1372, 0, 196, 379)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fr3er"]
 atlas = ExtResource("4_57ssk")
@@ -135,12 +123,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_aveid")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ld666")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_wxa5x")
 }, {
 "duration": 1.0,
@@ -154,13 +136,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b4k7g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s5qqi")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -207,7 +186,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nl3xd"]
@@ -220,11 +199,16 @@ script = ExtResource("1_w0rsf")
 
 [node name="character_anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4ulq7")
-animation = &"walk"
+animation = &"jump"
 autoplay = "idle"
-frame_progress = 0.0246091
 
 [node name="camera" type="Camera2D" parent="."]
+offset = Vector2(0, -300)
+zoom = Vector2(0.5, 0.5)
+process_callback = 0
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
 
 [node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2(-12, 10)

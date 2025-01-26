@@ -2,3 +2,4 @@
 Memoria 1
 main_character: Teste de texto
 main_character: Segundo teste de texto
+do Globals.change_scene("res://Levels/Tutorial.tscn")
