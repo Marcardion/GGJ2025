@@ -5,16 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://d34tljprlqunk" path="res://Assets/Rectangle 13.png" id="3_hhfva"]
 [ext_resource type="Texture2D" uid="uid://bd2k1nyivkw06" path="res://Assets/bubble logo.png" id="4_jdewx"]
 [ext_resource type="Texture2D" uid="uid://cuaa3cbaod2ws" path="res://BG/game logo 2.png" id="5_438pk"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uyspe"]
-content_margin_left = 12.0
-content_margin_top = 12.0
-content_margin_right = 12.0
-content_margin_bottom = 12.0
-bg_color = Color(0.545098, 0.796078, 0.992157, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
+[ext_resource type="PackedScene" uid="uid://6g6polhe7nhu" path="res://Assets/UI_Art/CustomButton.tscn" id="6_dedpg"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -75,11 +66,11 @@ theme_override_font_sizes/font_size = 24
 text = "Marcelo Costa
 Game Design, Narrative, Dev"
 
-[node name="Matheus Dias" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Matheus Jardim" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.152941, 0.207843, 0.470588, 1)
 theme_override_font_sizes/font_size = 24
-text = "Matheus Dias 
+text = "Matheus Jardim
 Dev, Level Design"
 
 [node name="Laila Alves" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
@@ -109,13 +100,6 @@ theme_override_colors/font_color = Color(0.14902, 0.211765, 0.470588, 1)
 theme_override_font_sizes/font_size = 24
 text = "Special Thanks & Music
 Henrique \"Perons\" Alves"
-
-[node name="ButtonBack" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_uyspe")
-text = "Back"
 
 [node name="Separator?" type="Control" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -150,4 +134,11 @@ grow_vertical = 2
 texture = ExtResource("5_438pk")
 stretch_mode = 4
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]
+[node name="CustomButton" parent="." instance=ExtResource("6_dedpg")]
+offset_left = 122.0
+offset_top = 720.0
+offset_right = 250.0
+offset_bottom = 784.0
+text = "BACK"
+
+[connection signal="custom_pressed" from="CustomButton" to="." method="_on_custom_button_custom_pressed"]
