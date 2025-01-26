@@ -4,6 +4,7 @@
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mwuxt"]
 blend_mode = 1
+light_mode = 1
 
 [sub_resource type="Animation" id="Animation_5c2aj"]
 length = 0.001
