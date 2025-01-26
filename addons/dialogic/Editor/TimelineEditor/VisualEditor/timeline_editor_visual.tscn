@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://ysqbusmy0qma"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Editor/TimelineEditor/VisualEditor/timeline_editor_visual.gd" id="1_8smxc"]
-[ext_resource type="Theme" uid="uid://cqst728xxipcw" path="res://addons/dialogic/Editor/Theme/MainTheme.tres" id="2_x0fhp"]
+[ext_resource type="Theme" uid="uid://cqst728xxipcw" path="res://Assets/UI_Art/MainTheme.tres" id="2_x0fhp"]
 [ext_resource type="Script" path="res://addons/dialogic/Editor/TimelineEditor/VisualEditor/TimelineArea.gd" id="3_sap1x"]
 [ext_resource type="Script" path="res://addons/dialogic/Editor/Events/EventBlock/event_right_click_menu.gd" id="4_ugiq6"]
 

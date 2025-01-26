@@ -14,8 +14,8 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u82hh"]
 
-[sub_resource type="Animation" id="Animation_fdu2m"]
-resource_name = "default"
+[sub_resource type="Animation" id="Animation_rjk2w"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -29,8 +29,8 @@ tracks/0/keys = {
 "values": [null]
 }
 
-[sub_resource type="Animation" id="Animation_rjk2w"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_fdu2m"]
+resource_name = "default"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

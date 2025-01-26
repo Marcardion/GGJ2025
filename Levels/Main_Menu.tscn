@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://6n3yg2cyqadw"]
+[gd_scene load_steps=7 format=3 uid="uid://6n3yg2cyqadw"]
 
 [ext_resource type="Script" path="res://Levels/main_menu.gd" id="1_7scxi"]
 [ext_resource type="Texture2D" uid="uid://cjagj2itmbs3l" path="res://BG/BG_Flat.png" id="1_ec8ra"]
 [ext_resource type="Texture2D" uid="uid://bhecttelxssbf" path="res://Assets/bubble_memory.png" id="2_rmj5x"]
 [ext_resource type="Texture2D" uid="uid://beop2581tntlh" path="res://Assets/game_logo.png" id="3_brbqd"]
+[ext_resource type="FontVariation" uid="uid://3bushjw0fiti" path="res://Assets/UI_Art/ui_font.tres" id="3_rqqcn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uyspe"]
 content_margin_left = 12.0
@@ -58,6 +59,7 @@ theme_override_constants/separation = 24
 
 [node name="Menu" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_rqqcn")
 theme_override_font_sizes/font_size = 40
 text = "Menu"
 horizontal_alignment = 1

@@ -69,6 +69,10 @@ window/size/viewport_height=900
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/sound_drop/plugin.cfg")
 
+[gui]
+
+theme/custom_font="res://Assets/UI_Art/ui_font.tres"
+
 [input]
 
 dialogic_default_action={
