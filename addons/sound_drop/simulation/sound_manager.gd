@@ -19,6 +19,12 @@ func setup(origin: Vector2, notes_width: float) -> void:
 	for i in range(CONSTS.NOTE_FREQS.size()):
 		if CONSTS.SCALE.has(i % 12):
 			_scale_freq.push_back(CONSTS.NOTE_FREQS[i])
+	
+	for i in range(10):
+		var player = AudioStreamPlayer.new()
+		add_child(player)
+		player.bus = "SoundDrop"
+		player.playback_type = AudioServer.PLAYBACK_TYPE_STREAM
 
 
 func queue_sound(params) -> void:
@@ -29,6 +35,9 @@ func queue_sound(params) -> void:
 	
 	var player = AudioStreamPlayer.new()
 	add_child(player)
+	player.bus = "SoundDrop"
+	player.playback_type = AudioServer.PLAYBACK_TYPE_STREAM
+
 	play_sound(player, params)
 	_players.push_back(player)
 
@@ -40,7 +49,6 @@ func play_sound(player : AudioStreamPlayer, params) -> void:
 	note = clamp(note, 0, _scale_freq.size()-1)
 	player.pitch_scale = _scale_freq[note]
 	player.volume_db = -(params["hits"] - 1) * 4
-	player.bus = "SoundDrop"
 	
 	player.play()
 	
