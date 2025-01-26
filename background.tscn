@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cyudycmf70sox"]
+[gd_scene load_steps=4 format=3 uid="uid://dkq52dpxv1etd"]
 
 [ext_resource type="Texture2D" uid="uid://cjagj2itmbs3l" path="res://BG/BG_Flat.png" id="1_i4v8b"]
 [ext_resource type="Texture2D" uid="uid://pri5m6xuqlvn" path="res://BG/clouds_bg.png" id="2_3um4n"]
@@ -21,17 +21,19 @@ texture = ExtResource("1_i4v8b")
 centered = false
 
 [node name="ParallaxCloudsBG" type="Parallax2D" parent="ParallaxBackground"]
+scroll_scale = Vector2(1.05, 1)
 repeat_size = Vector2(1024, 0)
-repeat_times = 10
+repeat_times = 20
 
 [node name="BG_Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxCloudsBG"]
+position = Vector2(0, 100)
 texture = ExtResource("2_3um4n")
 centered = false
 
 [node name="ParallaxCloudsMoving" type="Parallax2D" parent="ParallaxBackground"]
-scroll_scale = Vector2(0.5, 0.5)
+scroll_scale = Vector2(1.2, 1)
 repeat_size = Vector2(1024, 0)
-repeat_times = 10
+repeat_times = 20
 
 [node name="BG_Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxCloudsMoving"]
 texture = ExtResource("3_um371")
