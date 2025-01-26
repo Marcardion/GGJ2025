@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 const SoundManager := preload("sound_manager.gd")
-const MAX_LIFETIME = 4.0
+const CONSTS := preload("./simulation_consts.gd")
 
 signal position_stepped
 signal lifetime_ended
@@ -22,8 +22,8 @@ func _process(delta: float) -> void:
 	var step = floori(_life_timer / 0.1)
 	if step != _position_step:
 		_position_step = step
-		position_stepped.emit(global_position, _position_step)
-	if _life_timer > MAX_LIFETIME:
+		position_stepped.emit(global_position, _hits, _position_step)
+	if _life_timer > CONSTS.DAMA_LIFETIME:
 		lifetime_ended.emit()
 		queue_free()
 
@@ -34,7 +34,7 @@ func _ready() -> void:
 
 
 func _on_body_entered(body) -> void:
-	if _initialized:
+	if _initialized and body is StaticBody2D:
 		_hits += 1
 		_sound_manager.queue_sound({
 			"position": global_position,

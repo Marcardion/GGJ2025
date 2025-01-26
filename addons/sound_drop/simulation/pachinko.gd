@@ -106,29 +106,26 @@ func remove_random_bouncer():
 func create_random_bouncer():
 	var all_points : Array[Vector2] = []
 	for spawner in spawners:
-		all_points.append_array(spawner._dama_positions)
-	
-	all_points = all_points.filter(func(v: Vector2): return v.y > 200)
+		all_points.append_array(spawner.get_valid_positions())
 	
 	if all_points.size() < 5:
 		return
 	
 	var rand_pos = all_points.pick_random()
-	
 	var bouncer = BouncerScene.instantiate()
-	bouncer.position = rand_pos + Vector2(-40 + randf()*20, -40 + randf()*20)
 	bouncers.push_back(bouncer)
 	add_child(bouncer)
+	bouncer.global_position = rand_pos + Vector2(-40 + randf()*20, -40 + randf()*20)
 
 
 func create_new_spawner():
 	var spawner = SpawnerScene.instantiate()
-	spawner.position = Vector2(randf() * CONSTS.PACHINKO_NOTES_WIDTH * (CONSTS.SCALE.size() - 2), 0)
+	spawner.position = Vector2(randf() * CONSTS.PACHINKO_NOTES_WIDTH * (CONSTS.PACHINKO_INITIAL_SPAWN_NOTES_VARIATION), 0)
 	spawners.push_back(spawner)
 	add_child(spawner)
 	
 	var bouncer = BouncerScene.instantiate()
-	bouncer.position = spawner.position + Vector2(-40 + randf()*80, 200)
+	bouncer.position = spawner.position + Vector2(-40 + randf()*80, 200 + randf()*200)
 	add_child(bouncer)
 	
 	safe_bouncers[spawner] = bouncer

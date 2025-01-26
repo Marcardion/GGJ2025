@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cp7onx101qye5"]
+
+[node name="Test" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, 5500)
+zoom = Vector2(0.1, 0.1)
