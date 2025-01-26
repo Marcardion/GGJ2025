@@ -10,3 +10,35 @@ notes_target = 10
 [node name="SoundManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("3_pmlsp")
+
+[node name="DebugLayer" type="CanvasLayer" parent="."]
+layer = 99
+
+[node name="DebugContainer" type="VBoxContainer" parent="DebugLayer"]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DebugLabelHeat" type="Label" parent="DebugLayer/DebugContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DebugLabelOverrideHeat" type="Label" parent="DebugLayer/DebugContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DebugLabelHeatTimer" type="Label" parent="DebugLayer/DebugContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DebugLabelRefreshTimer" type="Label" parent="DebugLayer/DebugContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DebugLabelSpawnersCount" type="Label" parent="DebugLayer/DebugContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DebugLabelBouncersCount" type="Label" parent="DebugLayer/DebugContainer"]
+unique_name_in_owner = true
+layout_mode = 2

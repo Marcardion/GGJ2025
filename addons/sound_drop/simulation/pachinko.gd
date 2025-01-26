@@ -6,8 +6,7 @@ const BouncerScene = preload("./bouncer.tscn")
 
 const CONSTS = preload("simulation_consts.gd")
 
- 
-@export var notes_width = 40
+
 @export var spawners_target = 1
 @export var notes_target = 1
 
@@ -16,28 +15,64 @@ const CONSTS = preload("simulation_consts.gd")
 @onready var _refresh_timer = 0.0
 @onready var safe_bouncers : Dictionary = {}
 
+@onready var _override_heat = -1.0
 @onready var _heat_timer = 0.0
 @onready var _notes_played_since_last_refresh = 0
+@onready var _auto_refreshing = true
+
+func reset() -> void:
+	for i in range(spawners.size()):
+		remove_random_spawner()
+	
+	for i in range(bouncers.size()):
+		remove_random_bouncer()
+	
+	_override_heat = -1.0
+	_refresh_timer = 0.0
+	_heat_timer = 0.0
+	_auto_refreshing = true
+	_refresh()
+
+
+func reset_then_max_heat() -> void:
+	for i in range(spawners.size()):
+		remove_random_spawner()
+	
+	for i in range(bouncers.size()):
+		remove_random_bouncer()
+	
+	_override_heat = 1.0
+	
+	_refresh()
+
+
+func max_heat_then_reset() -> void:
+	_auto_refreshing = false
+	_override_heat = 1.0
+	_refresh()
+	
+	await get_tree().create_timer(2.0).timeout
+	
+	reset()
 
 
 func get_current_heat() -> float:
+	if _override_heat >= 0.0:
+		return _override_heat
 	return (-cos(_heat_timer*2*PI/CONSTS.PACHINKO_HEAT_PERIOD)+1)/2.0
 
-func refresh() -> void:
+
+func _refresh() -> void:
 	var current_heat = get_current_heat()
 	spawners_target = 1 + round(current_heat*(CONSTS.PACHINKO_MAX_HEAT_SPAWNERS_TARGET-1))
 	notes_target = spawners.size() + round(current_heat*(CONSTS.PACHINKO_MAX_HEAT_SOUNDS_TARGET - spawners.size()))
 
-	while spawners_target > spawners.size():
+	while spawners_target >= spawners.size():
 		create_new_spawner()
 	while spawners_target < spawners.size():
-		spawners.shuffle()
-		var spawner = spawners.pop_front()
-		safe_bouncers[spawner].queue_free()
-		safe_bouncers.erase(spawner)
-		spawner.queue_free()
+		remove_random_spawner()
 	
-	if notes_target > _notes_played_since_last_refresh:
+	if notes_target >= _notes_played_since_last_refresh:
 		create_random_bouncer()
 		create_random_bouncer()
 	elif notes_target < _notes_played_since_last_refresh:
@@ -45,6 +80,14 @@ func refresh() -> void:
 		remove_random_bouncer()
 
 	_notes_played_since_last_refresh = 0
+
+
+func remove_random_spawner() -> void:
+	spawners.shuffle()
+	var spawner = spawners.pop_front()
+	safe_bouncers[spawner].queue_free()
+	safe_bouncers.erase(spawner)
+	spawner.queue_free()
 
 
 func on_played_node():
@@ -80,7 +123,7 @@ func create_random_bouncer():
 
 func create_new_spawner():
 	var spawner = SpawnerScene.instantiate()
-	spawner.position = Vector2(randf()*notes_width*12, 0)
+	spawner.position = Vector2(randf() * CONSTS.PACHINKO_NOTES_WIDTH * (CONSTS.SCALE.size() - 2), 0)
 	spawners.push_back(spawner)
 	add_child(spawner)
 	
@@ -92,9 +135,12 @@ func create_new_spawner():
 
 
 func _ready() -> void:
-	%SoundManager.setup(global_position, notes_width)
+	%SoundManager.setup(global_position, CONSTS.PACHINKO_NOTES_WIDTH)
 	%SoundManager.played_note.connect(on_played_node)
-	refresh()
+	
+	%DebugContainer.visible = CONSTS.IS_DEBUG
+	
+	_refresh()
 
 
 func _physics_process(delta: float) -> void:
@@ -108,4 +154,13 @@ func _physics_process(delta: float) -> void:
 
 	if _refresh_timer > CONSTS.PACHINKO_REFRESH_TIMER:
 		_refresh_timer -= CONSTS.PACHINKO_REFRESH_TIMER
-		refresh()
+		if _auto_refreshing:
+			_refresh()
+
+	if CONSTS.IS_DEBUG:
+		%DebugLabelHeat.text = "Heat: %f" % get_current_heat()
+		%DebugLabelOverrideHeat.text = "Override heat: %f" % _override_heat
+		%DebugLabelHeatTimer.text = "Heat timer: %f" % _heat_timer
+		%DebugLabelRefreshTimer.text = "Refresh timer: %f" % _refresh_timer
+		%DebugLabelSpawnersCount.text = "Spawners: %d" % spawners.size()
+		%DebugLabelBouncersCount.text = "Bouncers: %d" % (bouncers.size() + spawners.size())

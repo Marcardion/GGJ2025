@@ -6,6 +6,7 @@ const MAX_LIFETIME = 4.0
 signal position_stepped
 signal lifetime_ended
 
+@onready var _hits := 0
 var _sound_manager : SoundManager
 var _initialized := false
 var _life_timer := 0.0
@@ -34,6 +35,8 @@ func _ready() -> void:
 
 func _on_body_entered(body) -> void:
 	if _initialized:
+		_hits += 1
 		_sound_manager.queue_sound({
-			"position": global_position
+			"position": global_position,
+			"hits": _hits
 		})

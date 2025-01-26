@@ -39,6 +39,9 @@ func play_sound(player : AudioStreamPlayer, params) -> void:
 	var note = floori(note_x / _notes_width) + CONSTS.SCALE.size()
 	note = clamp(note, 0, _scale_freq.size()-1)
 	player.pitch_scale = _scale_freq[note]
+	player.volume_db = -(params["hits"] - 1) * 4
+	player.bus = "SoundDrop"
+	
 	player.play()
 	
 	played_note.emit()
