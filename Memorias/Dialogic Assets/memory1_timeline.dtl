@@ -1,5 +1,16 @@
 [background arg="res://Memorias/CG/memoria-1.png" fade="0.0" transition="Simple Fade"]
-Memoria 1
-main_character: Teste de texto
-main_character: Segundo teste de texto
+Junho, 202X
+friend1_character: Eu não acredito que você vai fazer isso, Ariel!
+main_character: Fazer o que? Ir atrás do que eu quero?
+friend1_character: Ir atrás do que você acha que quer, quer dizer! 
+friend1_character: Em nenhum momento você comunicou a gente! Como você quer que a gente fique?
+friend2_character: Calma gente, tá todo mundo olhando...
+friend1_character: Nem vem, X! Você vai passar pano agora?
+main_character: Sinceramente, achei que vocês iam ficar felizes por mim! É uma otima oportunidade!
+friend2_character: A gente tá, Ariel... Mas é só que tudo foi tão subito, sei lá
+friend1_character: Fale por você, eu acho isso tudo uma merda. Você acha mesmo que vai dar certo?
+main_character: Eu tenho que tentar, né? Ou é melhor eu ficar aqui com vocês me prendendo e não ir atrás dos meus sonhos?
+main_character: Eu só queria um apoio dos meus amigos, vocês sabem como a barra lá em casa já tá dificil... Mas parece que esperei demais de vocês
+main_character: Se é que um dia vocês realmente foram meus amigos...
+Ariel se levanta, e sai da mesa...
 do Globals.change_scene("res://Levels/Tutorial.tscn")
