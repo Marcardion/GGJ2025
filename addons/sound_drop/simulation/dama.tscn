@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp8mj4vhn0lcy"]
+
+[ext_resource type="Script" path="res://addons/sound_drop/simulation/dama.gd" id="1_orfbr"]
+[ext_resource type="Script" path="res://addons/sound_drop/simulation/debug_drawer.gd" id="2_bfd06"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f4vet"]
+
+[node name="Dama" type="RigidBody2D"]
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_orfbr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_f4vet")
+
+[node name="DebugDrawer" type="Node2D" parent="."]
+script = ExtResource("2_bfd06")
