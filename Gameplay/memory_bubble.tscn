@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjwejdca7113v"]
+
+[ext_resource type="Script" path="res://Gameplay/memory_bubble.gd" id="1_aom08"]
+[ext_resource type="PackedScene" uid="uid://w2y0c63rnr67" path="res://BubbleSprite2D.tscn" id="1_yvtcq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lxhuq"]
+radius = 100.0
+
+[node name="MemoryBubble" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_aom08")
+
+[node name="BubbleSprite2d" parent="." instance=ExtResource("1_yvtcq")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lxhuq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

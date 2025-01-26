@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GGJ2025"
-run/main_scene="res://Tutorial.tscn"
+run/main_scene="res://Levels/Tutorial.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/image="res://Assets/bubble_memory.png"
 config/icon="res://icon.svg"
@@ -24,15 +24,15 @@ Globals="*res://globals.gd"
 [dialogic]
 
 directories/dch_directory={
-"friend1_character": "res://Memorias/friend1_character.dch",
-"friend2_character": "res://Memorias/friend2_character.dch",
-"main_character": "res://Memorias/main_character.dch"
+"friend1_character": "res://Memorias/Dialogic Assets/friend1_character.dch",
+"friend2_character": "res://Memorias/Dialogic Assets/friend2_character.dch",
+"main_character": "res://Memorias/Dialogic Assets/main_character.dch"
 }
 directories/dtl_directory={
-"memory1_timeline": "res://Memorias/memory1_timeline.dtl",
-"memory2_timeline": "res://Memorias/memory2_timeline.dtl",
-"memory3_timeline": "res://Memorias/memory3_timeline.dtl",
-"memory4_timeline": "res://Memorias/memory4_timeline.dtl"
+"memory1_timeline": "res://Memorias/Dialogic Assets/memory1_timeline.dtl",
+"memory2_timeline": "res://Memorias/Dialogic Assets/memory2_timeline.dtl",
+"memory3_timeline": "res://Memorias/Dialogic Assets/memory3_timeline.dtl",
+"memory4_timeline": "res://Memorias/Dialogic Assets/memory4_timeline.dtl"
 }
 layout/style_list=[]
 layout/default_style="Default"
